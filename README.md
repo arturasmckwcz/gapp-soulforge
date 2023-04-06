@@ -1,4 +1,4 @@
-#This is the SoulForge server
+# This is the SoulForge server
 
 ## Architecture:
 
