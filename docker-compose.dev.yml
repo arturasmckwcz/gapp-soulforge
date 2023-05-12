@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  soulforge:
+    image: gapp/soulforge
+    build:
+      context: .
+      args:
+        ENVIRONMENT: develop
+    volumes:
+      - ./:/app
+    ports:
+      - ${PORT:-4000}:3000
+    networks:
+      - gapp-network
+    command: nodemon app.py
+
+networks:
+  gapp-network:

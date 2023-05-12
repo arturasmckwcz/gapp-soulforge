@@ -1,10 +1,29 @@
 version: '3.8'
+
 services:
-  app:
+  timepulse:
+    image: gapp/soulforge
     build:
       context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
+      args:
+        ENVIRONMENT: production
     ports:
-      - 4000:4000
+      - ${PORT:-4100}:3000
+    networks:
+      - gapp-network
+    command:
+      [
+        'uwsgi',
+        '--http',
+        '0.0.0.0:3000',
+        '--master',
+        '--threads',
+        '2',
+        '-p',
+        '2',
+        '-w',
+        'wsgi:app',
+      ]
+
+networks:
+  gapp-network:
