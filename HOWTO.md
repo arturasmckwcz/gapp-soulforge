@@ -18,7 +18,7 @@
    ```
 4. start dev container:
    ```
-   $ docker-compose -p gapp-soulforge up
+   $ docker-compose -f docker-compose.dev.yml -p gapp up
    ```
 
 And voilà!
