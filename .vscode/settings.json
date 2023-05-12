@@ -2,5 +2,10 @@
   "terminal.integrated.shellArgs": [
     "-c",
     "if [ -f venv/bin/activate ]; then source venv/bin/activate; fi; zsh"
-  ]
+  ],
+  "cSpell.words": ["fanout", "gapp", "timepulse"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }
